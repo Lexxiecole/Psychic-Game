@@ -1,4 +1,11 @@
 
+//connect html to javascript
+
+
+var losses1= document.getElementById("#losses1");
+var left1= document.getElementById("#left1");
+var made1= document.getElementById("#made1");
+
 
 //creating my var here
 var wins=0; 
@@ -21,41 +28,29 @@ var made=0;
     var computerGuess = rando[Math.floor(Math.random() * rando.length)];
 
     //user guesses a letter
-    var userGuess = event.key
+	document.onkeyup = function(event) {
+        userGuess = event.key;
+        console.log(userGuess);
+    }
 
     //user guesses letter correctly--must create a loop
     if (userGuess === computerGuess) {
-        wins = ++;
+        wins ++;
         userGuess = 9;
+        document.getElementById("#wins").textContent = wins;
     }
 
     //user guesses letter incorrectly
     if (userGuess != computerGuess) {
-        losses = ++;
+        losses ++;
         userGuess = 9;
     }
 
+        //computer displays wins
+
+        function displayWins() {
+            var winsDisplayed = document.querySelector("#wins1");
+            winsDisplayed.textcontent = wins;
+        }
 
 
-
-
-//psuedo code for losses:
-    // a counter needs to be installed
-    // an if/then statement needs to be made.
-
-
-
-
-//psuedocode for guesses left:
-    // a loop needs to be made
-
-
-
-var left = i=0; i++               //i know i need i++ becuase i need to add one every time a new letter is guessed
-                                //I need to use the i++ loop to end the number of guesses.
-
-                                //if I > 6, restart?
-
-
-//psuedo code for guesses made:
-    // a loop needs to be made
